@@ -10,18 +10,9 @@ import { MovieService } from "./services/MovieService";
 import { ErrorStore } from "./stores/ErrorStore";
 import { LoadingStore } from "./stores/LoadingStore";
 import { MovieStore } from "./stores/MovieStore";
+import { Injected } from "./types/Injected";
 
-type Injected = {
-  axios: AxiosInstance;
-  errorStore: ErrorStore;
-  errorHandlerService: ErrorHandlerService;
-  loadingStore: LoadingStore;
-  loadingService: LoadingService;
-  movieStore: MovieStore;
-  movieService: MovieService;
-}
-
-function createInjected(): Injected {
+export function createInjected(): Injected {
   const axios: AxiosInstance = Axios.create({
     baseURL: "http://localhost:8090/",
   });
@@ -43,7 +34,7 @@ function createInjected(): Injected {
   };
 }
 
-const injectedContext: Context<Injected> = createContext<Injected>(null!);
+export const injectedContext: Context<Injected> = createContext<Injected>(null!);
 
 export function useInjected(): Injected {
   return useContext(injectedContext);

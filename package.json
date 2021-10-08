@@ -5,7 +5,8 @@
   "main": "index.tsx",
   "scripts": {
     "start": "webpack serve --port 3000 --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -13,19 +14,27 @@
   "devDependencies": {
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
     "@types/dompurify": "^2.3.1",
+    "@types/jest": "^27.0.2",
     "@types/react": "^17.0.26",
     "@types/react-dom": "^17.0.9",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.2.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "css-loader": "^6.3.0",
     "html-webpack-plugin": "^5.3.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.4",
     "postcss": "^8.3.8",
     "postcss-loader": "^6.1.1",
     "react-test-renderer": "^17.0.2",
     "sass": "^1.42.1",
     "sass-loader": "^12.1.0",
     "source-map-loader": "^3.0.0",
+    "ts-jest": "^27.0.5",
     "ts-loader": "^9.2.6",
     "typescript": "^3.9.10",
     "webpack": "^5.56.0",
@@ -56,5 +65,14 @@
     "style-loader": "^3.3.0",
     "tslint": "^6.1.3",
     "tslint-react": "^5.0.0"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.ts"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "babel-jest"
+    },
+    "testEnvironment": "jsdom"
   }
 }
