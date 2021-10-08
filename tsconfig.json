@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "./public/js",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "target": "es2017",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "esModuleInterop": true,
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}

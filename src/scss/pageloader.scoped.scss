@@ -1,0 +1,23 @@
+.full-page-spinner-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: 450;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-page-spinner-overlay--absolute {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}

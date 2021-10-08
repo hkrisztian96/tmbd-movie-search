@@ -1,0 +1,6 @@
+.movie-title {
+  cursor: pointer;
+  &:hover {
+    background-color: grey;
+  }
+}
